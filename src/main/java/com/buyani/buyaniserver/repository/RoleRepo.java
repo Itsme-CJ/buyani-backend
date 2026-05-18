@@ -12,7 +12,7 @@ public interface RoleRepo extends JpaRepository<Role, Integer> {
 
   @Query(value ="SELECT * " +
         "FROM role r " +
-        "LEFT JOIN user u " +
+        "LEFT JOIN app_user u " +
         "ON r.role_id = u.role_id " +
         "WHERE u.user_id = :userId", nativeQuery = true)
   Optional<Role> findByUserUserId(Integer userId);
