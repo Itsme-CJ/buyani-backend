@@ -28,4 +28,7 @@ VALUES ('admin', 'test', 'admin@gmail.com', '$2a$10$eKv1PjeuW96zZezHdFBAhO3OEhPV
   (SELECT role_id FROM role WHERE name = 'ADMIN'));
 
 
-
+-- changeset buyani:1.0.0.25
+UPDATE app_user 
+SET password = '$2y$10$j/Vmq44yHlPRe15dx3FEGuocsJVgLnQJiZszh1Kl03DBEPrsqvuxe'
+WHERE email_address = 'padmin@gmail.com';
