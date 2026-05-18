@@ -11,8 +11,8 @@ CREATE TABLE audit_log (
     entity_name VARCHAR(256) DEFAULT NULL,
     operation VARCHAR(256) DEFAULT NULL,
     field VARCHAR(256) DEFAULT NULL,
-    previous_value NVARCHAR(800) DEFAULT NULL,
-    new_value NVARCHAR(800) DEFAULT NULL,
+    previous_value VARCHAR(800) DEFAULT NULL,
+    new_value VARCHAR(800) DEFAULT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
