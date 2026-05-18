@@ -10,3 +10,4 @@ DROP FOREIGN KEY transaction_item_ibfk_1;
 ALTER TABLE transaction_item 
 ADD CONSTRAINT transaction_item_ibfk_1
 FOREIGN KEY (transaction_id) REFERENCES transaction(transaction_id) ON DELETE CASCADE;
+

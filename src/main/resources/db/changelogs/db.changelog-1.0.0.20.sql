@@ -4,7 +4,7 @@
 -- preconditions onFail:MARK_RAN onError:HALT
 -- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'audit_log'
 CREATE TABLE audit_log (
-    audit_log_id INT PRIMARY KEY AUTO_INCREMENT,
+    audit_log_id SERIAL PRIMARY KEY,
     entity_id INT DEFAULT NULL,
     store_id INT DEFAULT NULL,
     user_id INT DEFAULT NULL,
@@ -13,5 +13,6 @@ CREATE TABLE audit_log (
     field VARCHAR(256) DEFAULT NULL,
     previous_value NVARCHAR(800) DEFAULT NULL,
     new_value NVARCHAR(800) DEFAULT NULL,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+

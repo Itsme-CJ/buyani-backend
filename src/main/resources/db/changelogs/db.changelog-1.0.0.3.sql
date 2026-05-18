@@ -25,3 +25,4 @@ VALUES ('pcashier', 'test', 'pcashier@gmail.com', '$2a$10$eKv1PjeuW96zZezHdFBAhO
 INSERT INTO `user` (`first_name`, `last_name`, `email_address`, `password`, `status`, `role_id`)
 VALUES ('admin', 'test', 'admin@gmail.com', '$2a$10$eKv1PjeuW96zZezHdFBAhO3OEhPV9hqFMsrufnxncviREVUAP1EKC', 1, 
   (SELECT role_id FROM role WHERE name = 'ADMIN'));
+

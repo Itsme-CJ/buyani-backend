@@ -23,7 +23,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[user]")
+@Table(name = "app_user")
 public class User extends Abstract {
 
     @Id

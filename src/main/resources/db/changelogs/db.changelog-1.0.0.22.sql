@@ -23,3 +23,5 @@ BEGIN
    DELETE FROM `opening_hour` WHERE `store_id` = OLD.`store_id`;
 
 END;
+
+

@@ -7,3 +7,4 @@
 
 ALTER TABLE `transaction` ADD `cash` DECIMAL(10, 2) DEFAULT NULL;
 ALTER TABLE `transaction` ADD `change` DECIMAL(10, 2) DEFAULT NULL;
+

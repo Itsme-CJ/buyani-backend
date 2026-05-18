@@ -9,3 +9,4 @@
 ALTER TABLE `product_item` ADD `critical_level` INT DEFAULT NULL;
 ALTER TABLE `product_item` ADD `generic_name` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `product_item` ADD `with_prescription` INT DEFAULT NULL;
+

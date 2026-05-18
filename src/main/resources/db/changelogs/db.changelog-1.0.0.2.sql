@@ -5,3 +5,5 @@
 -- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM  role
 USE BuyAni;
 INSERT INTO `role` (name) VALUES ('CUSTOMER'), ('PADMIN'), ('PCASHIER'), ('ADMIN');
+
+

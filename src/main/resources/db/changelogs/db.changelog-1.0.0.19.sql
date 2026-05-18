@@ -7,3 +7,4 @@
 ALTER TABLE `store` ADD `account_number` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `store` ADD `account_name` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `store` ADD `qr_code` VARCHAR(255) DEFAULT NULL;
+

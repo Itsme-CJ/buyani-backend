@@ -45,3 +45,4 @@ FOREIGN KEY (store_id) REFERENCES store(store_id) ON DELETE CASCADE;
 -- ALTER TABLE opening_hour 
 -- ADD CONSTRAINT opening_hour_ibfk_2
 -- FOREIGN KEY (store_id) REFERENCES store(store_id) ON DELETE CASCADE;
+
