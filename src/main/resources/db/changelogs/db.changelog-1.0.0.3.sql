@@ -1,6 +1,7 @@
 ﻿-- liquibase formatted sql
         
 -- changeset buyani:1.0.0.3
+-- validCheckSum: ANY
 -- preconditions onFail:MARK_RAN onError:HALT
 -- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM app_user
 INSERT INTO store (name,description,image,status,is_reservation_activated,first_address,second_address,city,state,postal_code,phone_number,pin_location)
