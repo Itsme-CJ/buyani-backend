@@ -30,7 +30,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
   Page<User> findByStoreId(String storeId, Pageable page);
 
-  @Query(value = "SELECT * FROM user u LEFT JOIN role r ON u.role_id = r.role_id WHERE r.name = :name", nativeQuery = true)
+  @Query(value = "SELECT * FROM app_user u LEFT JOIN role r ON u.role_id = r.role_id WHERE r.name = :name", nativeQuery = true)
   Page<User> findByRoleName(@Param("name") String name, Pageable page);
 
   @RestResource(path = "user-search")
@@ -38,7 +38,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
       String lastName, String firstName, String storeId, Pageable page);
 
   @RestResource(path = "system-admin-search")
-  @Query(value = "SELECT * FROM user u LEFT JOIN role r ON u.role_id = r.role_id " +
+  @Query(value = "SELECT * FROM app_user u LEFT JOIN role r ON u.role_id = r.role_id " +
                  "WHERE r.name = :name " +
                  "AND (u.last_name LIKE CONCAT('%', :lastName, '%') " +
                  "OR u.first_name LIKE CONCAT('%', :firstName, '%'))",
@@ -50,18 +50,18 @@ public interface UserRepo extends JpaRepository<User, Integer> {
       Pageable page);
 
   @Query(value =
-      "SELECT MONTH(u.when_added) as month, COUNT(u.user_id) as cnt " +
-      "FROM user u " +
+      "SELECT EXTRACT(MONTH FROM u.when_added) as month, COUNT(u.user_id) as cnt " +
+      "FROM app_user u " +
       "LEFT JOIN role r ON u.role_id = r.role_id " +
-      "WHERE r.name = :roleName AND YEAR(u.when_added) = :year " +
-      "GROUP BY MONTH(u.when_added) " +
-      "ORDER BY MONTH(u.when_added)",
+      "WHERE r.name = :roleName AND EXTRACT(YEAR FROM u.when_added) = :year " +
+      "GROUP BY EXTRACT(MONTH FROM u.when_added) " +
+      "ORDER BY EXTRACT(MONTH FROM u.when_added)",
       nativeQuery = true)
   List<Object[]> countMonthlySignupsByRole(@Param("roleName") String roleName, @Param("year") int year);
 
   @Query(value =
       "SELECT COUNT(u.user_id) " +
-      "FROM user u " +
+      "FROM app_user u " +
       "LEFT JOIN role r ON u.role_id = r.role_id " +
       "WHERE r.name = :roleName",
       nativeQuery = true)
