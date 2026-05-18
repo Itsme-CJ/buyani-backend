@@ -8,3 +8,4 @@
 ALTER TABLE `transaction` ADD `cust_name` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `transaction` ADD `cust_id` VARCHAR(255) DEFAULT NULL;
 
+

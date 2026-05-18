@@ -7,3 +7,4 @@
 ALTER TABLE `reservation` ADD `schedule_time` TIMESTAMP DEFAULT NULL;
 ALTER TABLE `reservation` ADD `schedule_day` TIMESTAMP DEFAULT NULL;
 
+

@@ -6,3 +6,4 @@
 
 ALTER TABLE `reservation_list` ADD `store_id` INT DEFAULT NULL;
 
+

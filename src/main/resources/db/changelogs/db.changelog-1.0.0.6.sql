@@ -6,3 +6,4 @@
 ALTER TABLE transaction CHANGE `change` `transaction_change` DECIMAL(10, 2) DEFAULT NULL;
 
 
+

@@ -8,3 +8,4 @@
 
 ALTER TABLE `user` ADD `pin` VARCHAR(255) DEFAULT NULL;
 
+

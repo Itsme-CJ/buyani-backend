@@ -7,3 +7,4 @@
 ALTER TABLE `transaction` ADD `authorized_by` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `transaction` ADD `transaction_num` VARCHAR(255) DEFAULT NULL;
 
+

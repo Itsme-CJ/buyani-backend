@@ -6,3 +6,4 @@
 
 ALTER TABLE `chat_room` ADD `type` INT DEFAULT NULL;
 
+

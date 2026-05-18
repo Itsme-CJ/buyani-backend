@@ -6,3 +6,4 @@
 
 ALTER TABLE `reservation` ADD `reference` VARCHAR(255) DEFAULT NULL;
 
+

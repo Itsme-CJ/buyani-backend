@@ -6,3 +6,4 @@
 
 ALTER TABLE `reservation` ADD `transaction_id` INT DEFAULT NULL;
 
+

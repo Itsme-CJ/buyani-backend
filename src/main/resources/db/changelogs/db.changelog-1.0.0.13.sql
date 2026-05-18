@@ -6,3 +6,4 @@
 
 ALTER TABLE `message` ADD `to` VARCHAR(255) DEFAULT NULL;
 
+
