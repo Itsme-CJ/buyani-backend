@@ -4,10 +4,10 @@
 --preconditions onFail:MARK_RAN onError:HALT
 
 -- Ensure chat_room exists
---precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'chat_room');
+--precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'public' AND TABLE_NAME = 'chat_room');
 
 -- Ensure message exists
---precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'message');
+--precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'public' AND TABLE_NAME = 'message');
 
 ALTER TABLE chat_room 
 DROP FOREIGN KEY chat_room_ibfk_2;
