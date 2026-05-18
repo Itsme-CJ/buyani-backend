@@ -3,10 +3,10 @@
 --changeset buyani:1.0.0.14
 --preconditions onFail:MARK_RAN onError:HALT
 
--- Ensure `chat_room` exists
+-- Ensure chat_room exists
 --precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'chat_room');
 
--- Ensure `message` exists
+-- Ensure message exists
 --precondition-sql-check expectedResult:1 SELECT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'message');
 
 ALTER TABLE chat_room 
@@ -45,5 +45,6 @@ FOREIGN KEY (store_id) REFERENCES store(store_id) ON DELETE CASCADE;
 -- ALTER TABLE opening_hour 
 -- ADD CONSTRAINT opening_hour_ibfk_2
 -- FOREIGN KEY (store_id) REFERENCES store(store_id) ON DELETE CASCADE;
+
 
 
