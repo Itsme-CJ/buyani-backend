@@ -1,11 +1,8 @@
 --liquibase formatted sql
 
---changeset buyani:1.0.0.22
+--changeset buyani:1.0.0.22a splitStatements:false
 --preconditions onFail:MARK_RAN onError:HALT
-
--- Ensure the trigger does not already exist
---precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.triggers WHERE trigger_schema = 'public' AND trigger_name = 'before_store_delete';
-
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.routines WHERE routine_schema = 'public' AND routine_name = 'before_store_delete_fn';
 CREATE OR REPLACE FUNCTION before_store_delete_fn()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -19,6 +16,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--changeset buyani:1.0.0.22b
+--preconditions onFail:MARK_RAN onError:HALT
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.triggers WHERE trigger_schema = 'public' AND trigger_name = 'before_store_delete';
 CREATE TRIGGER before_store_delete
 BEFORE DELETE ON store
 FOR EACH ROW
