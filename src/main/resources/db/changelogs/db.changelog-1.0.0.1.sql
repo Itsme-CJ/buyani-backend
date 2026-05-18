@@ -1,8 +1,8 @@
--- liquibase formatted sql
+﻿-- liquibase formatted sql
         
--- changeset bayani:1.0.0.1
+-- changeset buyani:1.0.0.1
 -- preconditions onFail:MARK_RAN onError:HALT
--- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'bayani' AND TABLE_NAME = 'user'
+-- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'user'
 CREATE TABLE role (
     role_id INT PRIMARY KEY AUTO_INCREMENT,
     who_added VARCHAR(255),

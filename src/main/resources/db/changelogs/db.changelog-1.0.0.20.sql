@@ -1,8 +1,8 @@
---liquibase formatted sql
+﻿--liquibase formatted sql
 
--- changeset bayani:1.0.0.20
+-- changeset buyani:1.0.0.20
 -- preconditions onFail:MARK_RAN onError:HALT
--- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'bayani' AND TABLE_NAME = 'audit_log'
+-- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'buyani' AND TABLE_NAME = 'audit_log'
 CREATE TABLE audit_log (
     audit_log_id INT PRIMARY KEY AUTO_INCREMENT,
     entity_id INT DEFAULT NULL,

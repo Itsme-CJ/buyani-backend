@@ -1,6 +1,6 @@
--- liquibase formatted sql
+﻿-- liquibase formatted sql
         
--- changeset bayani:1.0.0.3
+-- changeset buyani:1.0.0.3
 -- preconditions onFail:MARK_RAN onError:HALT
 -- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM  user
 INSERT INTO store (`name`,`description`,`image`,`status`,`is_reservation_activated`,`first_address`,`second_address`,`city`,`state`,`postal_code`,`phone_number`,`pin_location`) 

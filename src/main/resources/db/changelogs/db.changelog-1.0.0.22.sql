@@ -1,10 +1,10 @@
---liquibase formatted sql
+﻿--liquibase formatted sql
 
---changeset bayani:1.0.0.22
+--changeset buyani:1.0.0.22
 --preconditions onFail:MARK_RAN onError:HALT
 
 -- Ensure the trigger does not already exist
---precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = 'bayani' AND TRIGGER_NAME = 'before_store_delete';
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = 'buyani' AND TRIGGER_NAME = 'before_store_delete';
 
 CREATE TRIGGER before_store_delete
 BEFORE DELETE ON `store`

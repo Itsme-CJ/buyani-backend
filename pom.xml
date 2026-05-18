@@ -8,11 +8,11 @@
     <version>2.7.5</version>
     <relativePath/>
   </parent>
-  <groupId>com.bayaniserver</groupId>
-  <artifactId>bayaniserver</artifactId>
+  <groupId>com.buyaniserver</groupId>
+  <artifactId>buyaniserver</artifactId>
   <version>1.0.0</version>
-  <name>bayaniserver</name>
-  <description>BayAni Server</description>
+  <name>buyaniserver</name>
+  <description>BuyAni Server</description>
   <properties>
     <java.version>11</java.version>
   </properties>
