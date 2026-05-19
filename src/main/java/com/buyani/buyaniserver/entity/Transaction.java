@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[transaction]")
+@Table(name = "transaction")
 public class Transaction extends Abstract implements IEntity {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

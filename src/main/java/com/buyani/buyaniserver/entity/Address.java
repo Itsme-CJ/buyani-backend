@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[address]")
+@Table(name = "address")
 public class Address extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

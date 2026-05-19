@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[message]")
+@Table(name = "message")
 public class Message extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Message extends Abstract {
 	@Column(name = "content")
 	private String content;
 
-	@Column(name = "`to`")
+	@Column(name = "to")
 	private String to;
 
   @JsonIgnore

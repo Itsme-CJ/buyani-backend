@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[store]")
+@Table(name = "store")
 public class Store extends Abstract {
 
   @Id

@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[product_item]")
+@Table(name = "product_item")
 public class ProductItem extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

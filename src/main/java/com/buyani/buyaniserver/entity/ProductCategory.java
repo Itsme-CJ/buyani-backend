@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[product_category]")
+@Table(name = "product_category")
 public class ProductCategory extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

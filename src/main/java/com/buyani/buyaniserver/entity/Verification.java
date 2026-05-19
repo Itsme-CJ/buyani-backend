@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "[verification]")
+@Table(name = "verification")
 public class Verification extends Abstract implements IEntity{
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

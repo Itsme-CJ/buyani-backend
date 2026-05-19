@@ -23,7 +23,7 @@ import lombok.Setter;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[reservation]")
+@Table(name = "reservation")
 public class Reservation extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

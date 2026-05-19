@@ -20,7 +20,7 @@ import java.util.Date;
 @Setter
 @Inheritance
 @Entity
-@Table(name = "[opening_hour]")
+@Table(name = "opening_hour")
 public class OpeningHour extends Abstract {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
