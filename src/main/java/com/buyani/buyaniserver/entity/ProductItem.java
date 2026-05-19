@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -36,8 +35,7 @@ public class ProductItem extends Abstract {
 	@Column(name = "description")
 	private String description;
 
-	@Lob
-	@Column(name = "image", columnDefinition = "LONGTEXT")
+	@Column(name = "image", columnDefinition = "TEXT")
 	private String image;
 
 	@Column(name = "product_number")
