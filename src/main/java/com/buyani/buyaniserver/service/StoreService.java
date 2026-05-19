@@ -64,9 +64,13 @@ public class StoreService {
     store.setDescription(request.getDescription());
 
     if (image != null && !image.isEmpty()) {
-      StorageUtil storageUtil = new StorageUtil();
-      String path = storageUtil.uploadImage(image);
-      store.setImage(path);
+      try {
+        StorageUtil storageUtil = new StorageUtil();
+        String path = storageUtil.uploadImage(image);
+        store.setImage(path);
+      } catch (Exception e) {
+        log.warn("Image upload skipped: {}", e.getMessage());
+      }
     }
 
     store = storeRepo.save(store);
