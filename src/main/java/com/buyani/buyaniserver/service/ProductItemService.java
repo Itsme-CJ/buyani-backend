@@ -44,6 +44,10 @@ public class ProductItemService {
     return productItemRepo.findAll();
   }
 
+  public List<ProductItem> getActiveProducts() {
+    return productItemRepo.findByStatus("ACTIVE");
+  }
+
   public List<ProductItem> getProductsByStoreId(Integer storeId) {
     return productItemRepo.findByStoreId(storeId);
   }

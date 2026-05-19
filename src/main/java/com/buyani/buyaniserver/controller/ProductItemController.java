@@ -32,6 +32,11 @@ public class ProductItemController {
     return new ResponseEntity<>(productItemService.getAllProducts(), HttpStatus.OK);
   }
 
+  @GetMapping("/active")
+  public ResponseEntity<List<ProductItem>> getActiveProducts() {
+    return new ResponseEntity<>(productItemService.getActiveProducts(), HttpStatus.OK);
+  }
+
   @GetMapping("/store/{storeId}")
   public ResponseEntity<List<ProductItem>> getProductsByStoreId(@PathVariable("storeId") Integer storeId) {
     return new ResponseEntity<>(productItemService.getProductsByStoreId(storeId), HttpStatus.OK);

@@ -66,6 +66,8 @@ public interface ProductItemRepo extends JpaRepository<ProductItem, Integer> {
 
   List<ProductItem> findByStoreId(Integer storeId);
 
+  List<ProductItem> findByStatus(String status);
+
   @RestResource(path="search-products-category")
   Page<ProductItem> findByProductNumberContainingOrNameContainingAndStoreIdAndProductCategoryName(String productNumber, 
   String name, Integer storeId, String category, Pageable page);
