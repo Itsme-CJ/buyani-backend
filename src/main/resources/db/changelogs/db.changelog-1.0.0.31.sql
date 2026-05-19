@@ -28,3 +28,8 @@ CREATE TABLE audit_log (
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_id VARCHAR(255)
 );
+
+-- changeset buyani:1.0.0.33
+-- preconditions onFail:MARK_RAN onError:HALT
+-- precondition-sql-check expectedResult:boolean SELECT data_type FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'store' AND column_name = 'is_reservation_activated'
+ALTER TABLE store ALTER COLUMN is_reservation_activated TYPE INTEGER USING CASE WHEN is_reservation_activated THEN 1 ELSE 0 END;
