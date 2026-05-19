@@ -84,12 +84,16 @@ public class StoreService {
       }
     }
 
-    notificationService.sendNotification(
-      store.getEmail(),
-      "⏳ Application Under Review",
-      "Your seller application for \"" + store.getName() + "\" is currently being reviewed. We'll notify you once it's processed.",
-      "PENDING"
-    );
+    try {
+      notificationService.sendNotification(
+        store.getEmail(),
+        "⏳ Application Under Review",
+        "Your seller application for \"" + store.getName() + "\" is currently being reviewed. We'll notify you once it's processed.",
+        "PENDING"
+      );
+    } catch (Exception e) {
+      log.warn("Notification skipped: {}", e.getMessage());
+    }
 
     return store;
   }
@@ -136,20 +140,24 @@ public class StoreService {
     store.setStatus(status);
     storeRepo.save(store);
 
-    if (status.equals("APPROVED")) {
-      notificationService.sendNotification(
-        store.getEmail(),
-        "🎉 Seller Application Approved!",
-        "Congratulations! Your store \"" + store.getName() + "\" has been approved. You can now start selling on BuyAni!",
-        "APPROVED"
-      );
-    } else if (status.equals("REJECTED")) {
-      notificationService.sendNotification(
-        store.getEmail(),
-        "❌ Seller Application Update",
-        "Unfortunately, your store \"" + store.getName() + "\" was not approved. Please contact support.",
-        "REJECTED"
-      );
+    try {
+      if (status.equals("APPROVED")) {
+        notificationService.sendNotification(
+          store.getEmail(),
+          "🎉 Seller Application Approved!",
+          "Congratulations! Your store \"" + store.getName() + "\" has been approved. You can now start selling on BuyAni!",
+          "APPROVED"
+        );
+      } else if (status.equals("REJECTED")) {
+        notificationService.sendNotification(
+          store.getEmail(),
+          "❌ Seller Application Update",
+          "Unfortunately, your store \"" + store.getName() + "\" was not approved. Please contact support.",
+          "REJECTED"
+        );
+      }
+    } catch (Exception e) {
+      log.warn("Notification skipped: {}", e.getMessage());
     }
 
     return new ResponseEntity<>(store, HttpStatus.OK);
