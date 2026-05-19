@@ -139,6 +139,6 @@ public class StorageUtil {
 
   public String getImagePathName(MultipartFile file) {
     String fileName = file.getOriginalFilename();
-    return getConfig("STORAGE_PATH_URL") + "/" + STORE_FOLDER + "/" + fileName;
+    return STORE_FOLDER + "/" + fileName;
   }
 }
