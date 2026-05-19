@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class StorageUtil {
-  private static final String BUCKET_NAME = "alchives-cdn";
+  private static final String BUCKET_NAME = "buyani-cdn-cleizeery";
   private static final String STORE_FOLDER = "buyani";
   private static final String SIGNING_REGION = "us-west-004";
 
