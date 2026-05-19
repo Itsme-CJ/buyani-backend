@@ -36,5 +36,5 @@ ALTER TABLE store ALTER COLUMN is_reservation_activated TYPE INTEGER USING CASE 
 
 -- changeset buyani:1.0.0.34
 -- preconditions onFail:MARK_RAN onError:HALT
--- precondition-sql-check expectedResult:character varying SELECT data_type FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'product_item' AND column_name = 'image'
+-- precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'product_item' AND column_name = 'image' AND data_type = 'text'
 ALTER TABLE product_item ALTER COLUMN image TYPE TEXT;
